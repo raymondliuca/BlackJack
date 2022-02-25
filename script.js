@@ -71,7 +71,6 @@ const cardSet = [
           dcValue = dcValue + cardSet[dc[0]].value;
           dcId.push(cardSet[dc[1]].id);
           dcValue = dcValue + cardSet[dc[1]].value;
-          console.log(dcId, dcValue);
       },
     
       generatePlayersCards: function() {
@@ -81,7 +80,6 @@ const cardSet = [
           pcValue = pcValue + cardSet[pc[0]].value;
           pcId.push(cardSet[pc[1]].id);
           pcValue = pcValue + cardSet[pc[1]].value;
-          console.log(pcId, pcValue);
       },
   
       displayDealersCards: function() {
@@ -125,7 +123,6 @@ const cardSet = [
             yourMoney = yourMoney + 30;
             yourWallet.textContent = yourMoney;
             this.displayDealersCards(); 
-            console.log(PlayerHasBlackJack == true);
             this.disablePlay();
             return;
           }
@@ -135,13 +132,9 @@ const cardSet = [
             yourMoney = yourMoney - 30; 
             yourWallet.textContent = yourMoney;
             this.displayDealersCards(); 
-            console.log(DealerHasBlackJack == true);
             this.disablePlay();
             return;
-          }
-          else {
-            console.log("no blackjack")
-          };
+          }       
       },
 
       checkDealerHasBlackJack: function() {
@@ -183,14 +176,12 @@ const cardSet = [
             this.disablePlay();
             return;
           };
-          console.log("Dealer's Cards: " + dcId, dcValue);
       },
       playerHit: function() {
           pc.push(this.generateACard());
           pcId.push(cardSet[pc[pc.length-1]].id);
           pcValue = pcValue + cardSet[pc[pc.length-1]].value;
           this.displayPlayersCards();
-          console.log("Player's cards: " + pcId, pcValue);
           this.checkPlayerBust();
           if (gameOver == true) {
             this.disablePlay();
@@ -225,10 +216,9 @@ const cardSet = [
             DealerBust = false;
           }
           else if (dcId.includes(1) && dcValue>21 && dcValue<32) {
-            console.log("soft not bust" + dcValue);
+            DealerBust = false;
           }
           else {
-            console.log("dealer busts")
             this.displayDealersCards(); 
             indicator.textContent = "Dealer Busts! You Win!";  
             MI.textContent = "You Win $20!";
@@ -250,10 +240,9 @@ const cardSet = [
             DealerBust = false;
           }
           else if (pcId.includes(1) && pcValue>21 && pcValue<32) {
-            console.log("soft not bust"+ pcValue);  
+            DealerBust = false;
           }
           else {
-            console.log("you bust");
             this.displayDealersCards();
             indicator.textContent = "You Bust! You Lose!";
             MI.textContent = "You Lose $20!";
