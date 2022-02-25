@@ -196,20 +196,9 @@ const cardSet = [
             this.disablePlay();
             return; 
           };
-          this.dealersTurn();
           
       },
 
-      dealersTurn: function() {
-          if (dcValue<17 || (dcId.includes(1) && dcValue<27)) {
-            this.dealerHit();
-          } else {
-            return;
-          };
-          if (gameOver == true) {
-            return;
-          }
-      },
       dealersTurnAfterPlayerStand: function() {
           if (dcValue<17 || (dcId.includes(1) && dcValue<27)) {
             this.dealerHit();
@@ -220,6 +209,7 @@ const cardSet = [
             this.disablePlay();
             return; 
           };
+          this.dealersTurnAfterPlayerStand();
       },    
 
       checkDealerBust: function() {
