@@ -24,10 +24,10 @@ Enjoy the game and be ready to win!
 
 # Future Enhancements
 
--Be able to do insureance and split in the game
+- Be able to do insureance and split in the game
 
--Add all four colors to reduce same card apperance
+- Add all four colors to reduce same card apperance
 
--Add sound effects and bgm
+- Add sound effects and bgm
 
--Update the Styling
+- Update the Styling
